@@ -1,0 +1,35 @@
+//poleObjektove
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace poleObjektove
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] cisla = { 5, 8, 4, 1, 3, 9, 0, 2, 6, 7 };//vyctem definovane pole
+            int[] kopieCisla= new int[10];
+
+            Array.Sort(cisla); //metoda sort
+            foreach (int i in cisla)
+                Console.Write("{0} ", i);
+            Console.WriteLine("\n");
+
+            Array.Copy(cisla, kopieCisla, 10); //metoda copy
+            foreach (int i in kopieCisla)
+                Console.Write("{0} ", i);
+            Console.WriteLine("\n");
+
+            //matematicke metody na instanci pole
+            Console.Write("min {0}, sum  {1},  average {2}  ", cisla.Min(), cisla.Sum(), cisla.Average());
+               
+
+            Console.ReadKey();
+        }
+    }
+}
