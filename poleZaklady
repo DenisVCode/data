@@ -1,0 +1,44 @@
+//poleZaklady
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace poleZaklady
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //jednorozmerne pole
+
+            Console.WriteLine("\n Jednorozmerne pole \n");
+            int[] poleJedna = new int[10];
+            for (int i = 0; i < 10; i++)
+            {
+                poleJedna[i] = i;
+                Console.Write(" {0} ", poleJedna[i]);
+
+            }
+            
+            Console.WriteLine("\n \n  Dvourozmerne pole \n");
+
+
+            //dvourozmerne pole
+            int[,] poleDva = new int[10,15];
+        for (int i = 0; i< 10; i++){
+            for(int j = 0; j< 15; j++)
+               poleDva[i,j] = 0;
+        }
+               
+        for(int i = 0; i< 10; i++){
+           for(int j = 0; j< 15; j++){
+               Console.Write(" {0}", poleDva[i,j]);
+           }
+        Console.WriteLine("\n");
+        }
+        Console.ReadKey();
+        }
+    }
+}
