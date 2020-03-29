@@ -1,0 +1,57 @@
+//Eratosthenovo sito - prvocisla
+using System;aq
+namespace EratosthenovoSito
+{
+class Program
+{
+static void Main(string[] args)
+{
+int?[] a = new int?[101];
+//naplnění pole
+for (int i = 0; i <= 100; i++)
+{
+a[i] = i;
+//Console.Write("\t {0} ", a[i]);
+}
+//nulování indexu 1 z definice prvočísla
+a[1] = 0;
+/*int indexPole = 2;
+for (int i = indexPole +1; i <= 100; i++)
+if ((a[i] % indexPole) == 0)
+a[i] = 0;
+Console.WriteLine("\n pole je vytištěno po průchodu 2");
+for (int i = indexPole; i <= 100; i++)
+Console.Write("\t {0} ", a[i]);*/
+/*for (int j = 2 ; j <= Math.Sqrt(100); j++)
+{
+if (a[j] != 0)
+{
+for (int i = j + 1; i <= 100; i++)
+{
+if ((a[i] % (j)) == 0)
+a[i] = 0;
+}
+}
+}
+for (int i = 0; i <= 100; i++)
+Console.Write(" {0} \t ", a[i]);*/
+//třetí pokus s NULL
+for (int j = 2; j <= Math.Sqrt(100); j++)
+{
+if (a[j] != null)
+{
+for (int i = j + 1; i <= 100; i++)
+{
+if ((a[i] % (j)) == 0)
+a[i] = null;
+}
+}
+}
+for (int i = 0; i <= 100; i++)
+if (a[i] != null)
+Console.Write(" {0} \t ", a[i]);
+
+Console.ReadKey();
+}
+}
+}
