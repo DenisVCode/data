@@ -1,0 +1,47 @@
+//selectSort
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace selectSort
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int POCET = 10;
+            int[] p = new int[POCET]; /* pole tridenych prvku */
+            p[0] = 8; p[1] = 3; p[2] = 7; p[3] = 1; p[4] = 10; p[5] = 5; p[6] = 6; p[7] = 4; p[8] = 2; p[9] = 9;
+
+            Console.WriteLine("Nesetridene pole: \n");
+            for (int k = 0; k < POCET; k++)     /* cyklus pro zobrazeni zadani  */
+                Console.Write(" {0}", p[k]);
+            Console.WriteLine("\n\n");
+
+            for (int i = 0; i < POCET - 1; i++)
+            {
+                //najde minimum v nesetridene casti pole
+                int min_idx = i;
+                for (int j = i + 1; j < POCET; j++)
+                {
+                    if (p[j] < p[min_idx])
+                        min_idx = j;
+                }
+
+                // vymena minima za prvni prvek
+                int hlp;
+                hlp = p[min_idx];
+                p[min_idx] = p[i];
+                p[i] = hlp;
+            }
+
+            Console.WriteLine("Setridene pole: \n");
+            for (int k = 0; k < POCET; k++)     /* cyklus pro zobrazeni zadani  */
+                Console.Write(" {0}", p[k]);
+            Console.ReadKey();
+        }
+
+    }
+}
