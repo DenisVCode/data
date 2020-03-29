@@ -1,0 +1,25 @@
+//Euklides
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace _095Euklides
+{
+class Program
+{
+static void Main(string[] args)
+{
+Console.WriteLine("zadej hodnoty pro NSD");
+int a = Int32.Parse(Console.ReadLine());
+int b = Int32.Parse(Console.ReadLine());
+while (a != b)
+{
+if (a > b) a = a - b;
+else b = b - a;
+}
+Console.WriteLine("NSD zadanych cisel je {0}", a);
+Console.ReadKey();
+}
+}
+}
