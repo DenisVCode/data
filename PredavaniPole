@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PredavaniPole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+                // vysledek volani metody ukladame do promenne seznamPrvku
+                int[] seznamPrvku = ZiskejPrvky();
+                Console.WriteLine("Zadane prvky: ");
+                for (int i = 0; i < seznamPrvku.Length; i++)
+                {
+                    Console.Write("{0} ", seznamPrvku[i]);
+                }
+                Console.ReadKey();
+        }
+
+            // Navratovy typ prvku je pole
+            static int[] ZiskejPrvky()
+            {
+                Console.Write("Pocet zadavanych prvku: ");
+                int pocet = Int32.Parse(Console.ReadLine());
+                int[] prvky = new int[pocet];
+                // Nacitani prvku
+                for (int i = 0; i < pocet; i++)
+                {
+                    Console.Write("{0}. prvek: ", i + 1);
+                    prvky[i] = Int32.Parse(Console.ReadLine());
+                }
+                return prvky;
+            }
+
+
+
+        
+    }
+}
