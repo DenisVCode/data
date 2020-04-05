@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace metodaParametry
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("delka podstavy kvadru a: ");
+            int a = Int32.Parse(Console.ReadLine());
+            Console.Write("sirka podstavy kvadru b: ");
+            int b = Int32.Parse(Console.ReadLine());
+            Console.Write("vyska kvadru c: ");
+            int c = Int32.Parse(Console.ReadLine());
+
+            double objem = kvadr(a,b,c);
+
+            Console.WriteLine("vysledny objem kvadru o rozmerech {0}, {1}, {2} je: {3}\n ", a,b,c, objem);
+            Console.ReadKey();
+        }
+
+        static double kvadr(int x, int y, int z)
+        {
+            double vysledek = x * y* z;
+
+            return vysledek;
+
+
+        }
+    }
+}
