@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace metodaRetezce
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string retezec1 = "Ladislav";
+            string retezec2 = "Novotny";
+            string retezec3 = "4.A";
+            string retezec4 = ", ";
+            string retezec0 = " ";
+
+            //slouceni do jednoho rezezce
+            string retezec5 = String.Concat(retezec1, retezec0, retezec2, retezec4, retezec3);
+            Console.WriteLine("Slouceny retezec: {0} \n", retezec5);
+
+
+            //prace s polem rezetcu
+            string[] poleRetezcu = { "Anna", " ", "Novakova", ", ", "4.B"};
+            Console.WriteLine("String.Concat(poleRetezcu): {0} \n", String.Concat(poleRetezcu));
+
+            //test, zda je retezec prazdny??? pozor - prazdny retezec muze obsahovat mezery
+            Console.WriteLine("String.IsNullOrEmpty(\"\"): {0}", String.IsNullOrEmpty(""));
+            Console.WriteLine("String.IsNullOrEmpty(\" \"): {0}", String.IsNullOrEmpty(retezec4));
+            
+                       
+            // pristup k prvkum retezce jako k prvkum pole
+            Console.Write("Vypis znaku v retezci na pozicich 0, 4, 7: ");
+            Console.Write(retezec1[0]);
+            Console.Write(retezec1[4]);
+            Console.Write(retezec1[7]);
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
