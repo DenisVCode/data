@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Narozeniny
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            MojeNarozeniny(new DateTime(2000, 1, 1));//zde zadat datum narozenin jako parametr metody
+            
+            Console.ReadKey();
+        }
+
+        static void MojeNarozeniny(DateTime datumNarozeni)//metoda počítá, kolik máš letos let
+        {
+            int pocetLet = DateTime.Now.Year - datumNarozeni.Year;//odečítá roky dnešního data a narozenin
+            Console.WriteLine("Vek v tomto roce: {0}", pocetLet);
+            if (datumNarozeni.Date == DateTime.Now.Date)//vysvětli, co se porovnává
+            {
+                Console.WriteLine("Blahopreji k narozeninam");//máš narozeniny
+            }
+            else
+            {
+                Console.Write("Pocet dni do narozenin: ");
+                if (datumNarozeni.Date.DayOfYear > DateTime.Now.Date.DayOfYear)//letos budeš mít narozeniny
+                {
+                    Console.WriteLine(datumNarozeni.DayOfYear - DateTime.Now.DayOfYear);//počet dnů do narozenin
+                }
+                else
+                {   //letos už jsi měl narozeniny, další budou za... dnů
+                    Console.WriteLine(365 - (DateTime.Now.DayOfYear - datumNarozeni.DayOfYear));
+                }
+            }
+        }
+    }
+}
+
