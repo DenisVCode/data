@@ -1,0 +1,25 @@
+using System;
+
+namespace koule_objem
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("polomer r: ");
+            int r = Int32.Parse(Console.ReadLine());
+
+            double objem = koule(r);
+            
+            Console.WriteLine(" vysledny objem koule o polomeru {0} je: {1}\n ", r, objem);
+            Console.ReadKey();
+        }
+
+        static double koule(int x)
+        {
+            double vysledek = 4.0 / 3.0 * Math.Pow(x,3) * Math.PI;
+
+            return vysledek;
+        }
+    }
+}
