@@ -1,0 +1,58 @@
+//053 Statické vlastnosti 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Statika
+{
+    class Program
+    {
+        public static List<Kniha> listKnih = new List<Kniha>();
+
+        static void Main(string[] args)
+        {
+            // Všimněte si, že nepřistupujeme k instanci třídy, ale
+            // přímo k vlastnosti třídy samotné
+            Console.WriteLine("Pocet knih: {0}", Kniha.PocetKnih);
+
+            // Máme tři instance třídy kniha, přičemž každá má své vlastnosti
+
+            Kniha kniha1 = new Kniha("nazev", "autor", 2000, "detska");
+            Kniha kniha2 = new Kniha("nazev2", "autor", 2002, "beletrie");
+            Kniha kniha3 = new Kniha("nazev3", "autor", 2003, "beletrie");
+
+            Console.WriteLine("Pocet vytvorenych knih: {0}", Kniha.PocetKnih);
+
+
+            Console.WriteLine("Prumerny rok vydani knihy: {0}", Kniha.PrumRok / Kniha.PocetKnih);
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+
+    class Kniha
+    {
+        public string Nazev { get; private set; }
+        public string Autor { get; private set; }
+        public int Rok { get; private set; }
+        public string Zamereni { get; private set; }
+        public static int PocetKnih { get; private set; }
+        public static int PrumRok { get; private set; }
+
+        public Kniha(string nazev, string autor, int rok, string zamereni)
+        {
+            Nazev = nazev;
+            Autor = autor;
+            Rok = rok;
+            Zamereni = zamereni;
+            PocetKnih++;
+            PrumRok = rok + PrumRok;
+        }
+    }
+}
+
