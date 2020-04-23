@@ -1,0 +1,71 @@
+using System;
+
+namespace Dedicnost
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Kniha kniha = new Kniha("Babicka", "Bozena Nemcova", 2019, "detska", 400);
+            Casopis casopis = new Casopis("Tyden", "CTK", 2019, "spolecnost", 10);
+            kniha.CistKnihu();
+            kniha.Anotace();
+            casopis.Anotace();
+            casopis.CistCasopis();
+            Console.ReadKey();
+        }
+    }
+
+    class Titul
+    {
+        public string Nazev { get; set; }
+        public string Autor { get; set; }
+        public int RokVydani { get; set; }
+
+        public void Anotace()
+        {
+            Console.WriteLine("Titul pojednava o...");
+        }
+    }
+
+    class Kniha : Titul
+    {
+
+        public string Zamereni { get; set; }
+        public int Cena { get; set; }
+
+        public Kniha(string nazev, string autor, int rokVydani, string zamereni, int cena)
+        {
+            Nazev = nazev;
+            Autor = autor;
+            RokVydani = rokVydani;
+            Zamereni = zamereni;
+            Cena = cena;
+        }
+
+        public void CistKnihu()
+        {
+            Console.WriteLine("Zacinate cist knihu...");
+        }
+    }
+
+    class Casopis : Titul
+    {
+        public string Zamereni { get; set; }
+        public int CisloVRocniku { get; set; }
+
+        public Casopis(string nazev, string autor, int rokVydani, string zamereni, int cisloVRocniku)
+        {
+            Nazev = nazev;
+            Autor = autor;
+            RokVydani = rokVydani;
+            Zamereni = zamereni;
+            CisloVRocniku = cisloVRocniku;
+        }
+
+        public void CistCasopis()
+        {
+            Console.WriteLine("Prolistujte si casopis... ");
+        }
+    }
+}
