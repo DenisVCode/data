@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _094LinearniRovnice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Budeme pocitat linearni rovnici, zadej koeficienty a, b");
+            int a = Int32.Parse(Console.ReadLine());
+            int b = Int32.Parse(Console.ReadLine());
+            
+            
+            try
+            {
+                int x = -b / a;
+                Console.WriteLine("vysledek je {0}.", x);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("Vyjimka odchycena! ");
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Vypocet ukoncen.");
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
+
