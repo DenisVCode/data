@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RekurzeEuklides
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            //velmi snadno dojde k preteceni zasobniku - reseno vyjimkou
+            Console.WriteLine("\n Zadejte cislo a:");
+            int a = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("\n Zadejte cislo b:");
+            int b = Int32.Parse(Console.ReadLine());
+            int nsd = Euklides(a,b);
+            Console.WriteLine("NSD  cisel {0} a {1} je {2}", a, b, nsd);
+            Console.ReadKey();
+        }
+
+        static int Euklides(int x, int y)
+        {
+            int nsd_vyp;
+            if (x == y)
+                nsd_vyp = x;
+            else if (x > y)
+                nsd_vyp = Euklides(x - y, y);
+            else
+                nsd_vyp = Euklides(x, x - y);
+            return nsd_vyp;
+        }
+
+
+
+
+
+    }
+}
