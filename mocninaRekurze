@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rekurze_mocnina
+{
+    class Program
+    {
+        static float Mocnina(int x, int n)
+        {
+            float pom = 1;
+            if (Math.Abs(n) > 0)
+                pom = x * Mocnina(x, Math.Abs(n) - 1);
+            else
+                pom = 1;
+            if (n < 0)
+                return 1 / pom;
+            else
+                return pom;
+        }
+
+        static void Main(string[] args)
+        {
+
+            // Rekurzivne resena n-ta mocnina celeho cisla
+            // float mocnina_n(int x, int n);
+            float vysledek;
+            int cislo, mocnitel;
+
+            Console.WriteLine("Cislo");
+            cislo = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Mocnitel");
+            mocnitel = Int32.Parse(Console.ReadLine());
+
+            vysledek = Mocnina(cislo,mocnitel);
+            Console.WriteLine("cislo {0}, mocnitel {1}, vysledek {2}", cislo, mocnitel, vysledek);
+            Console.ReadKey();
+            return ;
+        }
+      
+
+
+
+    }
+}
+
