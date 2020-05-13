@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _NacteniSouboruVyjimky
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamReader streamReader = null; //pouzijeme v bloku finally
+            //pri nastaveni az v bloku try by hodnota byla pouzitelna jen tomto bloku
+
+            try //blok, kde muze dojit k vyjimce = k chybe
+            {
+                streamReader = new StreamReader("zamestnanci.txt");
+                Console.WriteLine("Obsah souboru: ");
+                string radek = "";
+                while ((radek = streamReader.ReadLine()) != null)
+                {
+                    Console.WriteLine(radek);
+                }
+                Console.ReadKey();
+            }
+
+
+
+            catch (Exception e) //osetreni chyby
+            {
+                Console.WriteLine("Doslo k neocekavane vyjimce: {0}", e.Message);
+            }
+
+
+
+            finally //blok finally se vykona vzdy bez ohledu na existenci vyjimky
+            {
+                if (streamReader != null)
+                //nutno overit null, pokud by nedoslo k vytvoreni instance  StreamReader,
+                //obsazena hodnota null  v streamReader by vyvolala vyjimku na tento null
+
+                {
+                    streamReader.Close();
+                }
+            }
+
+        }
+    }
+}
+
+
+
